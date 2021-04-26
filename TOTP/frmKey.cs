@@ -193,6 +193,7 @@ namespace TOTP
             try
             {
                 using var wc = new WebClient();
+                wc.Proxy.Credentials = CredentialCache.DefaultCredentials;
                 wc.DownloadFile(url, filename);
                 return true;
             }
