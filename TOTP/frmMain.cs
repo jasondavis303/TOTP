@@ -185,6 +185,8 @@ namespace TOTP
 
         private void LoadKeys()
         {
+            btnEdit.Enabled = false;
+            btnDelete.Enabled = false;
             _keyDisplays.Clear();
             tlpMain.Controls.Clear();
             while (tlpMain.RowCount > 1)
