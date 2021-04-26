@@ -124,6 +124,8 @@ namespace TOTP
                 {
                     if(!_editMode)
                         MessageBox.Show("There is already an identical key saved in your list", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    DialogResult = DialogResult.OK;
+                    Close(); 
                     return;
                 }
 
