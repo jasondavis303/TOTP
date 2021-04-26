@@ -36,7 +36,7 @@ namespace TOTP
 #if !DEBUG
                 try
                 {
-                    if (SelfUpdatingApp.Installer.IsUpdateAvailableAsync(APP_ID).Result)
+                    if (SelfUpdatingApp.Installer.IsUpdateAvailableAsync(APP_ID, true).Result)
                     {
                         SelfUpdatingApp.Manager.InstallNewest();
                         SelfUpdatingApp.Installer.Launch(APP_ID);
