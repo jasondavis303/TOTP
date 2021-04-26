@@ -53,10 +53,11 @@ namespace TOTP
             var settings = Settings.Load();
             niTray.Visible = settings.MinimizeToTray;
             if (settings.StartMinimized)
-                Hide();
-            else
-                Show();
-
+            {
+                WindowState = FormWindowState.Minimized;
+                if (settings.MinimizeToTray)
+                    Hide();
+            }
         }
 
         private void frmMain_Resize(object sender, EventArgs e)
