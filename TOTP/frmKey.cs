@@ -138,9 +138,9 @@ namespace TOTP
                 if (!string.IsNullOrWhiteSpace(Key.Image))
                     ret = TryDownloadFile(Key.Image, Path.ChangeExtension(iconFile, Path.GetExtension(Key.Image)));
                 if (!ret)
-                    ret = TryDownloadFile($"https://{Key.Issuer}.com/favicon.ico", iconFile);
+                    ret = TryDownloadFile($"https://{Key.Issuer.Replace(" ", string.Empty)}.com/favicon.ico", iconFile);
                 if (!ret)
-                    ret = TryDownloadFile($"http://{Key.Issuer}.com/favicon.ico", iconFile);
+                    ret = TryDownloadFile($"http://{Key.Issuer.Replace(" ", string.Empty)}.com/favicon.ico", iconFile);
             }
 
             DialogResult = DialogResult.OK;
