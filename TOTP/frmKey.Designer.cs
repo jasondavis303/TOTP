@@ -29,7 +29,7 @@ namespace TOTP
         /// </summary>
         private void InitializeComponent()
         {
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tlpMain = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.tbURL = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -54,7 +54,7 @@ namespace TOTP
             this.btnSave = new System.Windows.Forms.Button();
             this.ofdQR = new System.Windows.Forms.OpenFileDialog();
             this.sfdQR = new System.Windows.Forms.SaveFileDialog();
-            this.tableLayoutPanel1.SuspendLayout();
+            this.tlpMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudPeriod)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudDigits)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
@@ -63,55 +63,55 @@ namespace TOTP
             this.tableLayoutPanel4.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tableLayoutPanel1
+            // tlpMain
             // 
-            this.tableLayoutPanel1.ColumnCount = 10;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Controls.Add(this.label1, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.tbURL, 2, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label2, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.tbIssuer, 2, 3);
-            this.tableLayoutPanel1.Controls.Add(this.label3, 4, 3);
-            this.tableLayoutPanel1.Controls.Add(this.tbAccount, 5, 3);
-            this.tableLayoutPanel1.Controls.Add(this.label4, 1, 5);
-            this.tableLayoutPanel1.Controls.Add(this.cbAlgorithm, 2, 5);
-            this.tableLayoutPanel1.Controls.Add(this.label5, 4, 5);
-            this.tableLayoutPanel1.Controls.Add(this.nudPeriod, 5, 5);
-            this.tableLayoutPanel1.Controls.Add(this.label6, 7, 5);
-            this.tableLayoutPanel1.Controls.Add(this.nudDigits, 8, 5);
-            this.tableLayoutPanel1.Controls.Add(this.label7, 1, 7);
-            this.tableLayoutPanel1.Controls.Add(this.tbSecret, 2, 7);
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 9);
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel4, 1, 11);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 14;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(618, 421);
-            this.tableLayoutPanel1.TabIndex = 0;
+            this.tlpMain.ColumnCount = 10;
+            this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpMain.Controls.Add(this.label1, 1, 1);
+            this.tlpMain.Controls.Add(this.tbURL, 2, 1);
+            this.tlpMain.Controls.Add(this.label2, 1, 3);
+            this.tlpMain.Controls.Add(this.tbIssuer, 2, 3);
+            this.tlpMain.Controls.Add(this.label3, 4, 3);
+            this.tlpMain.Controls.Add(this.tbAccount, 5, 3);
+            this.tlpMain.Controls.Add(this.label4, 1, 5);
+            this.tlpMain.Controls.Add(this.cbAlgorithm, 2, 5);
+            this.tlpMain.Controls.Add(this.label5, 4, 5);
+            this.tlpMain.Controls.Add(this.nudPeriod, 5, 5);
+            this.tlpMain.Controls.Add(this.label6, 7, 5);
+            this.tlpMain.Controls.Add(this.nudDigits, 8, 5);
+            this.tlpMain.Controls.Add(this.label7, 1, 7);
+            this.tlpMain.Controls.Add(this.tbSecret, 2, 7);
+            this.tlpMain.Controls.Add(this.tableLayoutPanel2, 1, 9);
+            this.tlpMain.Controls.Add(this.tableLayoutPanel4, 1, 11);
+            this.tlpMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpMain.Location = new System.Drawing.Point(0, 0);
+            this.tlpMain.Name = "tlpMain";
+            this.tlpMain.RowCount = 14;
+            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpMain.Size = new System.Drawing.Size(618, 421);
+            this.tlpMain.TabIndex = 0;
             // 
             // label1
             // 
@@ -126,7 +126,7 @@ namespace TOTP
             // 
             // tbURL
             // 
-            this.tableLayoutPanel1.SetColumnSpan(this.tbURL, 7);
+            this.tlpMain.SetColumnSpan(this.tbURL, 7);
             this.tbURL.Dock = System.Windows.Forms.DockStyle.Top;
             this.tbURL.Location = new System.Drawing.Point(82, 23);
             this.tbURL.Name = "tbURL";
@@ -167,7 +167,7 @@ namespace TOTP
             // 
             // tbAccount
             // 
-            this.tableLayoutPanel1.SetColumnSpan(this.tbAccount, 4);
+            this.tlpMain.SetColumnSpan(this.tbAccount, 4);
             this.tbAccount.Dock = System.Windows.Forms.DockStyle.Top;
             this.tbAccount.Location = new System.Drawing.Point(286, 69);
             this.tbAccount.Name = "tbAccount";
@@ -279,7 +279,7 @@ namespace TOTP
             // 
             // tbSecret
             // 
-            this.tableLayoutPanel1.SetColumnSpan(this.tbSecret, 7);
+            this.tlpMain.SetColumnSpan(this.tbSecret, 7);
             this.tbSecret.Dock = System.Windows.Forms.DockStyle.Top;
             this.tbSecret.Location = new System.Drawing.Point(82, 162);
             this.tbSecret.Name = "tbSecret";
@@ -292,7 +292,7 @@ namespace TOTP
             this.tableLayoutPanel2.AutoSize = true;
             this.tableLayoutPanel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableLayoutPanel2.ColumnCount = 1;
-            this.tableLayoutPanel1.SetColumnSpan(this.tableLayoutPanel2, 8);
+            this.tlpMain.SetColumnSpan(this.tableLayoutPanel2, 8);
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel2.Controls.Add(this.pbQR, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 0, 2);
@@ -364,7 +364,7 @@ namespace TOTP
             this.tableLayoutPanel4.AutoSize = true;
             this.tableLayoutPanel4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableLayoutPanel4.ColumnCount = 3;
-            this.tableLayoutPanel1.SetColumnSpan(this.tableLayoutPanel4, 8);
+            this.tlpMain.SetColumnSpan(this.tableLayoutPanel4, 8);
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
@@ -415,7 +415,7 @@ namespace TOTP
             this.BackColor = System.Drawing.SystemColors.Control;
             this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(618, 421);
-            this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.tlpMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(634, 1000);
@@ -424,8 +424,8 @@ namespace TOTP
             this.Name = "frmKey";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "New Key";
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
+            this.tlpMain.ResumeLayout(false);
+            this.tlpMain.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudPeriod)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudDigits)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -439,7 +439,7 @@ namespace TOTP
 
         #endregion
 
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel tlpMain;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tbURL;
         private System.Windows.Forms.Label label2;

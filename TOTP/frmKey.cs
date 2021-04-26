@@ -1,6 +1,8 @@
 ﻿using BasicOTP;
 using System;
 using System.Drawing;
+using System.IO;
+using System.Net;
 using System.Windows.Forms;
 
 namespace TOTP
@@ -125,6 +127,22 @@ namespace TOTP
                     return;
                 }
 
+            string iconFile = Path2.IconFile(Key.Issuer);
+            if (!File.Exists(iconFile))
+            {
+                //Save icon
+                tlpMain.Enabled = false;
+                UseWaitCursor = true;
+                using var wc = new WebClient();
+                bool ret = false;
+                if (!string.IsNullOrWhiteSpace(Key.Image))
+                    ret = TryDownloadFile(Key.Image, Path.ChangeExtension(iconFile, Path.GetExtension(Key.Image)));
+                if (!ret)
+                    ret = TryDownloadFile($"https://{Key.Issuer}.com/favicon.ico", iconFile);
+                if (!ret)
+                    ret = TryDownloadFile($"http://{Key.Issuer}.com/favicon.ico", iconFile);
+            }
+
             DialogResult = DialogResult.OK;
             Close();
         }
@@ -166,6 +184,19 @@ namespace TOTP
                 btnSaveQR.Enabled = true;
                 btnSave.Enabled = true;
             }
+        }
+
+        private bool TryDownloadFile(string url, string filename)
+        {
+            try
+            {
+                using var wc = new WebClient();
+                wc.DownloadFile(url, filename);
+                return true;
+            }
+            catch { }
+
+            return false;
         }
 
     }

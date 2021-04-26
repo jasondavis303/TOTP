@@ -27,7 +27,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="BasicOTP" Version="21.4.22.278" />
+    <PackageReference Include="BasicOTP" Version="21.4.26.275" />
     <PackageReference Include="suag" Version="21.4.25.1432" />
     <PackageReference Include="System.Resources.Extensions" Version="5.0.0" />
   </ItemGroup>
