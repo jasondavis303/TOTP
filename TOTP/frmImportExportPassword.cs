@@ -5,7 +5,7 @@ namespace TOTP
 {
     public partial class frmImportExportPassword : Form
     {
-        const string EXPORT_DESC = "Enter a password to encrypt the file. This doesn't have to be the same as your account password.";
+        const string EXPORT_DESC = "Enter a password to encrypt the file.";
         const string IMPORT_DESC = "Enter the password to decrypt the file.";
 
         private readonly bool _exportMode;
@@ -37,8 +37,9 @@ namespace TOTP
 
         private void EnableSave()
         {
-            btnSave.Enabled = !string.IsNullOrWhiteSpace(tbPassword.Text) &&
-                tbConfirm.Visible ? tbConfirm.Text == tbPassword.Text : true;
+            btnSave.Enabled = string.IsNullOrWhiteSpace(tbPassword.Text) ||
+                !tbConfirm.Visible || 
+                tbConfirm.Text == tbPassword.Text;
         }
     }
 }

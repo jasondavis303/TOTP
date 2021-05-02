@@ -22,14 +22,6 @@ namespace TOTP
         {
             Text += $" v{SelfUpdatingApp.Installer.GetInstalledVersion(Program.APP_ID)}";
 
-            using var f = new frmPassword();
-            if (f.ShowDialog() != DialogResult.OK)
-            {
-                Close();
-                Application.Exit();
-                return;
-            }
-
             LoadKeys();
         }
 
@@ -195,6 +187,7 @@ namespace TOTP
                 tlpMain.RowCount--;
             }
 
+            SavedSites.Load();
             SavedSites.Sort();
 
             int cnt = 0;

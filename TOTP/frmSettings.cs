@@ -1,5 +1,4 @@
-﻿using Microsoft.Win32;
-using System;
+﻿using System;
 using System.Windows.Forms;
 
 namespace TOTP
@@ -23,7 +22,6 @@ namespace TOTP
             chkStartMinimized.Enabled = chkStartOnLogin.Checked;
             chkStartMinimized.Checked = settings.RunOnLogin && settings.StartMinimized;
             chkMinimizeToTray.Checked = settings.MinimizeToTray;
-            chkSavePassword.Checked = settings.SavePassword;
 
             _manualChange = false;
         }
@@ -65,24 +63,5 @@ namespace TOTP
             settings.MinimizeToTray = chkMinimizeToTray.Checked;
             settings.Save();
         }
-
-        private void chkSavePassword_CheckedChanged(object sender, EventArgs e)
-        {
-            if (_manualChange)
-                return;
-
-            var settings = Settings.Load();
-            settings.SavePassword = chkSavePassword.Checked;
-            settings.Password = settings.SavePassword ? Crypto.Protect(SavedSites.Password) : null;
-            settings.Save();
-        }
-
-        private void btnChangePassword_Click(object sender, EventArgs e)
-        {
-            using var f = new frmChangePassword();
-            f.ShowDialog();
-        }
-
-        
     }
 }

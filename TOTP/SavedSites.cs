@@ -1,5 +1,6 @@
 ﻿using BasicOTP;
-using System;
+using Krypto.WonderDog;
+using Krypto.WonderDog.Symmetric;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -8,10 +9,6 @@ namespace TOTP
 {
     static class SavedSites
     {
-        private const string MAGIC_TEXT = "If you can read this, I was decrypted successfully!";
-
-        public static string Password { get; set; }
-
         public static List<OtpKey> Keys { get; } = new List<OtpKey>();
 
         public static void Load()
@@ -23,12 +20,8 @@ namespace TOTP
 
             var lst = File.ReadAllLines(Path2.DataFile);
 
-            string test = Crypto.Decrypt(lst[0], Password);
-            if (test != MAGIC_TEXT)
-                throw new Exception("Invalid password!");
-
-            for(int i = 1; i < lst.Length; i++)
-                Keys.Add(OtpKey.FromString(Crypto.Decrypt(lst[i], Password)));
+            foreach (string line in lst)
+                Keys.Add(OtpKey.FromString(Crypto.Unprotect(line)));
         }
 
         public static void Sort()
@@ -48,25 +41,25 @@ namespace TOTP
             if (Keys.Count == 0)
                 return;
 
-            var lst = new List<string>
-            {
-                Crypto.Encrypt(MAGIC_TEXT, Password)
-            };
+            var lst = new List<string>();
 
             foreach (var key in Keys)
-                lst.Add(Crypto.Encrypt(key.ToString(), Password));
+                lst.Add(Crypto.Protect(key.ToString()));
+
             File.WriteAllLines(Path2.DataFile, lst);
         }
 
         public static void Export(string filename, string password)
         {
-            var lst = new List<string>
-            {
-                Crypto.Encrypt(MAGIC_TEXT, password)
-            };
+            var lst = new List<string>();
+            var kryptKey = new Key(password, new byte[8]);
 
             foreach (var key in Keys)
-                lst.Add(Crypto.Encrypt(key.ToString(), password));
+            {
+                var alg = SymmetricFactory.CreateAES();
+                lst.Add(alg.Encrypt(kryptKey, key.ToString()));
+            }
+
             File.WriteAllLines(filename, lst);
         }
 
@@ -77,15 +70,14 @@ namespace TOTP
             if (!File.Exists(filename))
                 return ret;
 
+            var kryptKey = new Key(password, new byte[8]);
+            var alg = SymmetricFactory.CreateAES();
+
             var lst = File.ReadAllLines(filename);
 
-            string test = Crypto.Decrypt(lst[0], password);
-            if (test != MAGIC_TEXT)
-                throw new Exception("Invalid password!");
-
-            for (int i = 1; i < lst.Length; i++)
+            foreach(string line in lst)
             {
-                string url = Crypto.Decrypt(lst[i], password);
+                string url = alg.Decrypt(kryptKey, line);
                 var existing = Keys.FirstOrDefault(item => item.ToString() == url);
                 if (existing == null)
                 {

@@ -33,8 +33,6 @@ namespace TOTP
             this.chkStartOnLogin = new System.Windows.Forms.CheckBox();
             this.chkStartMinimized = new System.Windows.Forms.CheckBox();
             this.chkMinimizeToTray = new System.Windows.Forms.CheckBox();
-            this.btnChangePassword = new System.Windows.Forms.Button();
-            this.chkSavePassword = new System.Windows.Forms.CheckBox();
             this.tlpMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,12 +47,10 @@ namespace TOTP
             this.tlpMain.Controls.Add(this.chkStartOnLogin, 1, 1);
             this.tlpMain.Controls.Add(this.chkStartMinimized, 2, 3);
             this.tlpMain.Controls.Add(this.chkMinimizeToTray, 1, 5);
-            this.tlpMain.Controls.Add(this.btnChangePassword, 1, 9);
-            this.tlpMain.Controls.Add(this.chkSavePassword, 1, 7);
             this.tlpMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpMain.Location = new System.Drawing.Point(0, 0);
             this.tlpMain.Name = "tlpMain";
-            this.tlpMain.RowCount = 12;
+            this.tlpMain.RowCount = 8;
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
@@ -62,12 +58,8 @@ namespace TOTP
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpMain.Size = new System.Drawing.Size(232, 233);
+            this.tlpMain.Size = new System.Drawing.Size(232, 140);
             this.tlpMain.TabIndex = 0;
             // 
             // chkStartOnLogin
@@ -105,35 +97,11 @@ namespace TOTP
             this.chkMinimizeToTray.UseVisualStyleBackColor = true;
             this.chkMinimizeToTray.CheckedChanged += new System.EventHandler(this.chkMinimizeToTray_CheckedChanged);
             // 
-            // btnChangePassword
-            // 
-            this.btnChangePassword.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.tlpMain.SetColumnSpan(this.btnChangePassword, 2);
-            this.btnChangePassword.Location = new System.Drawing.Point(53, 185);
-            this.btnChangePassword.Name = "btnChangePassword";
-            this.btnChangePassword.Size = new System.Drawing.Size(124, 23);
-            this.btnChangePassword.TabIndex = 4;
-            this.btnChangePassword.Text = "Change Password";
-            this.btnChangePassword.UseVisualStyleBackColor = true;
-            this.btnChangePassword.Click += new System.EventHandler(this.btnChangePassword_Click);
-            // 
-            // chkSavePassword
-            // 
-            this.chkSavePassword.AutoSize = true;
-            this.tlpMain.SetColumnSpan(this.chkSavePassword, 2);
-            this.chkSavePassword.Location = new System.Drawing.Point(23, 142);
-            this.chkSavePassword.Name = "chkSavePassword";
-            this.chkSavePassword.Size = new System.Drawing.Size(100, 17);
-            this.chkSavePassword.TabIndex = 3;
-            this.chkSavePassword.Text = "Save Password";
-            this.chkSavePassword.UseVisualStyleBackColor = true;
-            this.chkSavePassword.CheckedChanged += new System.EventHandler(this.chkSavePassword_CheckedChanged);
-            // 
             // frmSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(232, 233);
+            this.ClientSize = new System.Drawing.Size(232, 140);
             this.Controls.Add(this.tlpMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -154,7 +122,5 @@ namespace TOTP
         private System.Windows.Forms.CheckBox chkStartOnLogin;
         private System.Windows.Forms.CheckBox chkStartMinimized;
         private System.Windows.Forms.CheckBox chkMinimizeToTray;
-        private System.Windows.Forms.Button btnChangePassword;
-        private System.Windows.Forms.CheckBox chkSavePassword;
     }
 }
