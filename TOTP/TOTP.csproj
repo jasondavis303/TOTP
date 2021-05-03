@@ -28,8 +28,8 @@
 
   <ItemGroup>
     <PackageReference Include="BasicOTP" Version="21.4.26.275" />
-    <PackageReference Include="Krypto.WonderDog" Version="21.5.1.1078" />
-    <PackageReference Include="suag" Version="21.4.26.1051" />
+    <PackageReference Include="Krypto.WonderDog" Version="21.5.2.1100" />
+    <PackageReference Include="suag" Version="21.5.3.292" />
     <PackageReference Include="System.Resources.Extensions" Version="5.0.0" />
   </ItemGroup>
 
